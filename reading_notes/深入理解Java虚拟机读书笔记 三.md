@@ -93,9 +93,9 @@
 ### 经典垃圾收集器
 对于如何发起内存回收(根节点枚举,并发扫描标记),如何加速回收(降低停顿),如何保证回收正确性(增量更新和原始快照),前文已经有简单介绍.但垃圾回收的具体动作因不同的垃圾收集器而异,以`HotSpot虚拟机`为例,垃圾收集器有以下几种:
 - `Serial`/`Serial Old`: 分别代表了新生代和老年代的收集器.其中新生代采用复制算法,老年代采用整理算法.但它只采用一条收集线程完成垃圾收集,并且收集时必须暂停其他所有工作线程.即使如此,它相比其他单线程收集器,具有简单高效的优点,同时也是额外内存消耗最小的.
-![Serial/Serial Old垃圾收集器](https://upload-images.jianshu.io/upload_images/12157360-7d05c66a7f3d263f.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
+![Serial/Serial Old垃圾收集器](/home/may/learning/blog/source/assets/Serial-Serial Old垃圾收集器.png)
 - `ParNew`: `Serial`的多线程版本,是应用于新生代的收集器
-![ParNew/Serial Old收集器](https://upload-images.jianshu.io/upload_images/12157360-3ae83c12465c8af4.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
+![ParNew/Serial Old收集器](/home/may/learning/blog/source/assets/ParNew-Serial Old收集器.png)
 - `Parallel Scavenge/Parallel Old`: `Parallel Scavenge`是基于复制算法实现的多线程新生代收集器,与`ParNew`不同在于它的关注点在吞吐量(处理器运行用户代码时间和处理器总消耗时间)上,也被成为吞吐量优先收集器.`Parallel Old`是它的老年代版本.
 > 在`Parallel Old`出现之前,`Parallel Scavenge`只能与`Serial Old`一起搭配
 
