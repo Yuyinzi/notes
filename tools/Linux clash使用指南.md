@@ -12,7 +12,7 @@ sudo mv clash-linux-amd64-v1.6.5 /usr/local/bin/clash
 sudo chmod +x /usr/local/bin/clash
 ```
 ## 启动
-初始启动时会下载`config.yaml`以及`Country.mmdb`到`~/config/clash`下.
+初始启动时会下载`config.yaml`以及`Country.mmdb`到`~/.config/clash`下.
 下载好再次启动,就会出现下面的日志:
 ```
 [clash] sudo clash                                                                                                                                                                                         
@@ -24,7 +24,7 @@ INFO[0000] Start initial compatible provider Others
 ...
 ```
 ## 下载配置文件
-在`~/config/clash`里放入购买上网服务给的`yaml`文件,这里使用的[easyssr](https://cryml.cn/8c1uzCq)的服务:
+在`~/config/clash`里放入购买上网服务给的`yaml`文件,重命名替换掉原本的`config.yaml`文件，这里使用的[easyssr](https://cryml.cn/8c1uzCq)的服务:
 ```
 sudo wget -O config.yml 订阅链接
 ```
